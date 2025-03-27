@@ -32,8 +32,6 @@ spec:
   pipelineRef:
     resolver: git
     params:
-    - name: pathInRepo
-      value: pipelines/auto-increment-tag-repo.yaml
     - name: revision
       value: master
     - name: org
