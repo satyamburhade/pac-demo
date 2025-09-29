@@ -4,7 +4,7 @@ metadata:
   name: test-eco
   annotations:
     pipelinesascode.tekton.dev/on-cel-expression: >-
-      (event.matches('^(pull_request)$') && target_branch.matches('^(main|master)$')) ||
+      (event.matches('^(pull_request)$') && target_branch.matches("refs/heads/*") ||
       (event.matches('^(push)$') && target_branch.startsWith("refs/tags/v"))
     pipelinesascode.tekton.dev/max-keep-runs: "5"
 spec:
