@@ -1,3 +1,0 @@
-read
-assa
-sadasd
