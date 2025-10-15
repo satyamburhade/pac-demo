@@ -8,7 +8,9 @@ metadata:
     pipelinesascode.tekton.dev/max-keep-runs: "5"
     pipelinesascode.tekton.dev/pipeline: "https://raw.githubusercontent.com/satyamburhade/pac-demo/refs/heads/main/pipeline.yaml"
     pipelinesascode.tekton.dev/task: "https://raw.githubusercontent.com/satyamburhade/pac-demo/refs/heads/main/.tekton/task.yaml"
-# spec:
+spec:
+  pipelineRef:
+    name: new-pipeline
 #   pipelineSpec:
 #     tasks:
 #       - name: echo-hello
