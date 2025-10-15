@@ -8,15 +8,17 @@ metadata:
       (event.matches('^(push)$') && target_branch.startsWith("refs/tags/v")) ||
       (event.matches('^(push)$') && target_branch.matches("refs/heads/*")
     pipelinesascode.tekton.dev/max-keep-runs: "5"
-spec:
-  pipelineSpec:
-    tasks:
-      - name: echo-hello
-        taskSpec:
-          steps:
-            - name: echo
-              image: registry.access.redhat.com/ubi9/ubi-micro
-              script: |
-                #!/usr/bin/env bash
-                echo "hello world"
-  serviceAccountName: pipeline
+    pipelinesascode.tekton.dev/pipeline: "https://raw.githubusercontent.com/satyamburhade/pac-demo/refs/heads/main/pipeline.yaml"
+    pipelinesascode.tekton.dev/task: "../task.yaml"
+# spec:
+#   pipelineSpec:
+#     tasks:
+#       - name: echo-hello
+#         taskSpec:
+#           steps:
+#             - name: echo
+#               image: registry.access.redhat.com/ubi9/ubi-micro
+#               script: |
+#                 #!/usr/bin/env bash
+#                 echo "hello world"
+#   serviceAccountName: pipeline
