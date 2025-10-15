@@ -8,5 +8,11 @@ spec:
   tasks:
     - name: sleep
       taskRef:
-        kind: Task
-        name: sleep
+        params:
+          - name: kind
+            value: task
+          - name: name
+            value: sleep
+          - name: namespace
+            value: openshift-pipelines
+        resolver: cluster
