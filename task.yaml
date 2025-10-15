@@ -3,11 +3,9 @@ kind: Task
 metadata:
   name: sleep
 spec:
-  params:
-    - name: sleep-seconds
   steps:
-    - name: uid
+    - computeResources: {}
       image: mirror.gcr.io/busybox
-      command: ["/bin/sh", "-c"]
-      args:
-        - sleep $(params.sleep-seconds)
+      name: echo-hello
+      script: |
+        echo "Hello, from PAC!"
