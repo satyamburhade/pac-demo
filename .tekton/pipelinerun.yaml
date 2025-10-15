@@ -4,9 +4,8 @@ metadata:
   name: test-eco
   annotations:
     pipelinesascode.tekton.dev/on-cel-expression: >-
-      (event.matches('^(pull_request)$') && target_branch.matches("refs/heads/*") ||
-      (event.matches('^(push)$') && target_branch.startsWith("refs/tags/v")) ||
-      (event.matches('^(push)$') && target_branch.matches("refs/heads/*")
+      (event.matches('^(pull_request)$') ||
+      (event.matches('^(push)$'))
     pipelinesascode.tekton.dev/max-keep-runs: "5"
     pipelinesascode.tekton.dev/pipeline: "https://raw.githubusercontent.com/satyamburhade/pac-demo/refs/heads/main/pipeline.yaml"
     pipelinesascode.tekton.dev/task: "../task.yaml"
