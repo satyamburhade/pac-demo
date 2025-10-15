@@ -8,4 +8,4 @@ spec:
       image: mirror.gcr.io/busybox
       name: echo-hello
       script: |
-        echo "Hello, from PAC!"
+        echo "Hello, from outside PAC!"
