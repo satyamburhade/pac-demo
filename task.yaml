@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: sleep
+spec:
+  steps:
+    - computeResources: {}
+      image: mirror.gcr.io/busybox
+      name: echo-hello
+      script: |
+        echo "Hello, from PAC!"
