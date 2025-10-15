@@ -1,8 +1,8 @@
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
-  annotations:
-    pipelinesascode.tekton.dev/task: "sleep"
+  # annotations:
+  #   pipelinesascode.tekton.dev/task: "sleep"
   name: new-pipeline
 spec:
   tasks:
