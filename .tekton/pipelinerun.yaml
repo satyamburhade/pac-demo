@@ -3,9 +3,8 @@ kind: PipelineRun
 metadata:
   name: test-eco
   annotations:
-    pipelinesascode.tekton.dev/on-cel-expression: >-
-      (event.matches('^(pull_request)$') ||
-      (event.matches('^(push)$'))
+    pipelinesascode.tekton.dev/on-event: "[pull_request, push]"
+    pipelinesascode.tekton.dev/on-target-branch: "[main]"
     pipelinesascode.tekton.dev/max-keep-runs: "5"
     pipelinesascode.tekton.dev/pipeline: "https://raw.githubusercontent.com/satyamburhade/pac-demo/refs/heads/main/pipeline.yaml"
     pipelinesascode.tekton.dev/task: "../task.yaml"
